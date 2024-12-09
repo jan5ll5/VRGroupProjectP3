@@ -7,10 +7,22 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
     public Text scoreText;
+
     public static int score = 0;
     public static int totalScore = 6;
 
-   public void UpdateUI(int score, int totalScore)
+    void Awake()
+    {
+        instance = this;
+    }
+
+    public static void AddScore(int amount)
+    {
+        score += amount;
+        UIManager.instance.UpdateUI();
+    }
+
+   public void UpdateUI()
     {
         scoreText.text = "Score:" + score + "/" + totalScore;
     }
