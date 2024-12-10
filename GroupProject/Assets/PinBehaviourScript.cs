@@ -10,7 +10,7 @@ public class NewBehaviourScript : MonoBehaviour
     */
     void OnTrigerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Hit_Lane")
+        if (other.gameObject.tag == "Hite_Lane")
         {
             UIManager.AddScore(1);
             Destroy(gameObject, 1.5f);
